@@ -1,5 +1,5 @@
 production:
-  app: joesak
+  app: that-was-fun
   stack: cedar
   config:
     BUNDLE_WITHOUT: "development:test"
