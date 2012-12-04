@@ -1,5 +1,0 @@
-production:
-  app: joesak
-  stack: cedar
-  config:
-    BUNDLE_WITHOUT: "development:test"
