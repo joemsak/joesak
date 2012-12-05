@@ -3,6 +3,7 @@ h1, h2 {
   font-weight: bold;
   font-size: 86px;
   margin: 0;
+  color: #333;
 }
 
 h2 {
@@ -15,4 +16,5 @@ body {
   margin: 0 auto;
   font-family: 'Arimo', sans-serif;
   font-size: 26px;
+  color: #444;
 }
