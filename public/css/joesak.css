@@ -1,5 +1,18 @@
-h1 {
+h1, h2 {
   font-family: 'Gentium Book Basic', serif;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 86px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 46px;
+}
+
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Arimo', sans-serif;
+  font-size: 26px;
 }
