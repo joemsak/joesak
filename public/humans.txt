@@ -7,7 +7,7 @@
 
 # THANKS
 
-    Jana Kinsmman, Tyler Breland for the inspiration
+    Jana Kinsman, Tyler Breland for the inspiration
 
 # TECHNOLOGY COLOPHON
 
