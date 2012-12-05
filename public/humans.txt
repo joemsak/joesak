@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Joe Sak -- Owner -- @abughat
 
 # THANKS
 
-    <name>
+    Jana Kinsmman, Tyler Breland for the inspiration
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+    Rack, Heroku
