@@ -1,3 +1,12 @@
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Arimo', sans-serif;
+  font-size: 26px;
+  color: #444;
+}
+
 h1, h2 {
   font-family: 'Gentium Book Basic', serif;
   font-weight: bold;
@@ -10,11 +19,12 @@ h2 {
   font-size: 46px;
 }
 
-body {
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: 'Arimo', sans-serif;
-  font-size: 26px;
-  color: #444;
+a, a:visited {
+  color: #3385FF;
+  text-decoration: none;
+}
+
+a:hover {
+  background: #3385FF;
+  color: #fff;
 }
