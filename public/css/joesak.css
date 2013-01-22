@@ -28,3 +28,28 @@ a:hover {
   background: #3385FF;
   color: #fff;
 }
+
+@media only screen and (max-width: 750px) {
+  body {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  body {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 66px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
