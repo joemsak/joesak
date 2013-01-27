@@ -1,3 +1,5 @@
+require 'rack/rewrite'
+
 use Rack::Static,
   :urls => ["/css", "/js", "/img",
             "/robots.txt", "/humans.txt", "/favicon.ico"],
@@ -6,6 +8,11 @@ use Rack::Static,
   :header_rules => [
     [:all, {'Cache-Control' => 'public, max-age=86400'}]
   ]
+
+use Rack::Rewrite do
+  r301 %r{/posts/(.+)$},
+       'http://joemsak.tumblr.com/posts/$1'
+end
 
 run lambda { |env|
   [
