@@ -10,8 +10,8 @@ use Rack::Static,
   ]
 
 use Rack::Rewrite do
-  r301 %r{/posts/(.+)$},
-       'http://joemsak.tumblr.com/posts/$1'
+  r301 %r{/post/(.+)$},
+       'http://joemsak.tumblr.com/post/$1'
 end
 
 run lambda { |env|
