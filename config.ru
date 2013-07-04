@@ -2,7 +2,8 @@ require 'rack/rewrite'
 
 use Rack::Static,
   :urls => ["/css", "/js", "/img",
-            "/robots.txt", "/humans.txt", "/favicon.ico"],
+            "/robots.txt", "/humans.txt", "/favicon.ico",
+            "/cv.pdf"],
   :root => "public",
   :index => "index.html",
   :header_rules => [
