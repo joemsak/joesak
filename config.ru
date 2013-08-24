@@ -22,3 +22,17 @@ run lambda { |env|
     File.open('public/404.html')
   ]
 }
+
+map "/en" do
+  run lambda { |env|
+  [
+    200,
+    {
+      'Content-Type'  => 'text/html',
+      'Cache-Control' => 'public, max-age=86400'
+    },
+    File.open('public/en/index.html', File::RDONLY)
+  ]
+}
+end
+
