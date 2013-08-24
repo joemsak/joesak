@@ -296,3 +296,10 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+.lang {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 0.7em;
+}
