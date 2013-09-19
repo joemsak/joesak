@@ -23,7 +23,7 @@ run lambda { |env|
   ]
 }
 
-map "/en" do
+map "/fr-qc" do
   run lambda { |env|
   [
     200,
@@ -31,7 +31,7 @@ map "/en" do
       'Content-Type'  => 'text/html',
       'Cache-Control' => 'public, max-age=86400'
     },
-    File.open('public/en/index.html', File::RDONLY)
+    File.open('public/fr-qc/index.html', File::RDONLY)
   ]
 }
 end
