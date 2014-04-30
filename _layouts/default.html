@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="{{ page.meta_description }}">
+    <meta name="keywords" content="{{ page.meta_keywords }}">
+    <title>Joe Sak - {{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/compiled/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-36797801-1', 'joesak.com');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+
+  <body id="{{ page.scope }}">
+    <section id="main-section">
+      {{ content }}
+    </section>
+    <footer id="main-footer">
+      &copy; <script>document.write(new Date().getFullYear());</script> Joe Sak
+    </footer>
+    <script>
+      var eachItem = function(items, callback) {
+        Array.prototype.forEach.call(items, function(item, i){
+          callback(item);
+        });
+      }
+
+      var addClass = function(el, className) {
+        if (el.classList)
+          el.classList.add(className);
+        else
+          el.className += ' ' + className;
+      }
+
+      var removeClass = function(el, className) {
+        if (el !== undefined && el.classList !== undefined) {
+          el.classList.remove(className);
+        } else if (el !== undefined) {
+          el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+      }
+
+      var getItems = function(className) {
+        var selector = '#items' + ' article';
+        if (className !== undefined)
+          selector += '.' + className
+        return document.querySelectorAll(selector);
+      }
+
+      var showItems = function(items) {
+        eachItem(items, function(item, i){
+          removeClass(item, 'hidden');
+        });
+
+      }
+
+      var hideItems = function(items) {
+        eachItem(items, function(item, i){
+          addClass(item, 'hidden');
+        });
+      }
+
+      var filterItems = function(className) {
+        hideItems(getItems());
+        showItems(getItems(className))
+      }
+
+      var navClick = function(e) {
+        e.preventDefault();
+        var active_item = document.querySelectorAll('nav a.active')[0];
+        removeClass(active_item, 'active');
+        addClass(e.target, 'active');
+        filterItems(e.target.getAttribute('href'));
+      }
+
+      var nav_items = document.querySelectorAll('nav a');
+      eachItem(nav_items, function(item) {
+        item.addEventListener('click', navClick);
+      });
+
+      filterItems('welcome');
+    </script>
+  </body>
+</html>

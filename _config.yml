@@ -1,0 +1,6 @@
+paginate: 10
+permalink: pretty
+name: joemsak
+description: The blog of Joe Sak
+pygments: true
+exclude: ['vendor']

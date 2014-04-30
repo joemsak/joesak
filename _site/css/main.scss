@@ -1,0 +1,200 @@
+@import "./reset.css";
+@import "./lib";
+
+$line-height: 1.618rem;
+$fs: 137%;
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)";
+
+@function lh ($num:1, $root-variance:1) {
+  @if ($root-variance != 1) {
+    @return ($line-height / $root-variance) * $num;
+  } @else {
+    @return $line-height * $num;
+  }
+}
+
+$link: rgb(0, 0, 238);
+$visited: rgb(85, 26, 139);
+$active: darken(rgb(0, 0, 238), 15%);
+
+html {
+  font-size: $fs;
+  @media (min-width:768px) and (max-width:960px) { font-size: $fs * 0.93; }
+  @media (min-width:540px) and (max-width:768px) { font-size: $fs * 0.83; }
+  @media (max-width:540px) { font-size: $fs * 0.7; }
+}
+body {
+  font-family: "Droid Serif";
+  color: $text;
+  background: #FFF;
+  line-height: lh();
+}
+img {
+  display: block;
+  width: 100%;
+  &.circle {
+    border-radius: 50%;
+  }
+}
+div {
+  line-height: lh();
+}
+p {
+  max-width: 768px;
+  line-height: lh();
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: lh();
+}
+ul, ol {
+  line-height: lh();
+  margin-left: lh();
+  li { margin-top: lh(); }
+  li:first-child { margin-top: lh(); }
+}
+a {
+  line-height: lh();
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  &:visited { color: $visited; }
+  &:active { color: $active; }
+}
+img, p, ul, ol, table, code, form {
+  line-height: lh();
+  margin-bottom: lh();
+  &:last-child { margin-bottom: 0px; }
+}
+#main-section {
+  width: 80%;
+  max-width: 768px;
+  margin: lh(2) auto;
+
+  @media (max-width: 768px) {
+    width: 86%;
+    margin: lh() auto;
+  }
+  @media (max-width: 540px) { width: 92%; }
+}
+.back-top, .back-bottom { font-size: 0.8rem; }
+.back-top {
+  margin-top: lh(-1);
+  margin-bottom: lh();
+  @media (max-width: 768px) { margin-top: lh(-0.5) }
+}
+.back-bottom {
+  margin-top: lh();
+  text-align: center;
+  margin-bottom: lh(-1);
+  @media (max-width: 768px) { margin-bottom: lh(-0.5) }
+}
+#main-footer {
+  font-size: 0.8rem;
+  margin-top: lh(2);
+  margin-bottom: lh();
+  text-align: center;
+  color: #AAA;
+}
+nav {
+  float: right;
+  a {
+    font-size: 0.8rem;
+    line-height: lh();
+    margin-left: lh(0.25);
+    &.active {
+      color: #333;
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+}
+#page-header {
+  position: relative;
+  margin-bottom: lh();
+  p {
+    padding-left: 120px;
+    @include box-sizing(border-box);
+  }
+  .portrait {
+    width: 100px;
+    border-radius: 50px;
+    position: absolute;
+    top: lh(0.15);
+    left: lh(-0.1);
+  }
+  @media (max-width: 768px) {
+    p { padding-left: 90px; }
+    .portrait { width: 75px; }
+  }
+  @media (max-width: 540px) {
+    p { padding-left: 0px; }
+    .portrait {
+      position: static;
+      margin: 0 auto lh();
+    }
+  }
+}
+
+#items-header {
+  margin-bottom: lh();
+  border-bottom: 1px solid #efefef;
+  @include clearfix;
+  .title {
+    font-size: 0.8rem;
+    color: #AAA;
+    line-height: lh();
+    float: left;
+  }
+}
+
+.text-header {
+  .title {
+    font-weight: bold;
+  }
+}
+#items article {
+  position: relative;
+  padding-left: 65px;
+  @include box-sizing(border-box);
+  @media (max-width: 540px) { padding-left: 40px; }
+  &.hidden { display: none; }
+  &:before {
+    content: " ";
+    width: 50px;
+    position: absolute;
+    top: lh(0.15);
+    left: 0;
+    display: block;
+    background-repeat: no-repeat;
+    @media #{$retina} { background-size: 50px auto; }
+    @media (max-width: 540px) { background-size: 30px auto; }
+  }
+  header {
+    margin-bottom: lh();
+    .date {
+      font-weight: normal;
+      color: #AAA;
+      font-size: 0.8rem;
+      line-height: lh();
+      display: block;
+    }
+  }
+}
+.dot-break {
+  margin: lh(0.6) auto lh(1.4);
+  width: 200px;
+  display: block;
+  text-align: center;
+  clear: both;
+  color: #DBDBDB;
+  letter-spacing: 0.5em;
+}
+#story-header {
+  h1 {
+    font-size: 1.8rem;
+    line-height: lh(1.5);
+    font-weight: bold;
+    margin-bottom: lh();
+  }
+  p { margin-bottom: lh(); }
+}
