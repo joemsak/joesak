@@ -1,4 +1,4 @@
-schneiderik
+Joe Sak
 ===========
 
-Projects of Erik Schneider
+The web site (and blog?) of Joe Sak
