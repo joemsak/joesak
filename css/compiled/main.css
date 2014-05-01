@@ -98,7 +98,10 @@ nav {
   nav a {
     font-size: 0.8rem;
     line-height: 1.618rem;
-    margin-left: 0.4045rem; }
+    margin-left: 0.4045rem;
+    text-decoration: none; }
+    nav a:visited {
+      color: #0000ee; }
     nav a.active {
       color: #333;
       text-decoration: none;
