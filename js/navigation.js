@@ -1,4 +1,6 @@
-var eachItem = function(items, callback) {
+var nav_items = document.querySelectorAll('nav a'),
+
+eachItem = function(items, callback) {
   Array.prototype.forEach.call(items, function(item, i){
     callback(item);
   });
@@ -37,19 +39,47 @@ displayContent = function(html) {
   container.innerHTML = content;
 },
 
+updateHistory = function(url) {
+  history.pushState(null, null, url);
+},
+
+displayPage = function(url) {
+  url = url || location.href;
+  getRemoteContent(url);
+  updateHistory(url);
+  setActiveItem();
+},
+
+setActiveItem = function() {
+  var active_item = document.querySelectorAll('nav a.active')[0],
+      url = location.href;
+
+  if(url.match(/\/$/) !== null) {
+    url = url.slice(0, -1);
+  }
+
+  removeClass(active_item, 'active');
+
+  eachItem(nav_items, function(item) {
+    var href = item.href;
+    if (href === url || (href == '/welcome' && location.pathname == '/')) {
+      addClass(item, 'active');
+    }
+  });
+},
+
 navClick = function(e) {
   e.preventDefault();
-  var active_item = document.querySelectorAll('nav a.active')[0];
-  removeClass(active_item, 'active');
-  addClass(e.target, 'active');
-  getRemoteContent(e.target.getAttribute('href'));
+  var url = e.target.getAttribute('href');
+  displayPage(url);
 };
-
-var nav_items = document.querySelectorAll('nav a');
 
 eachItem(nav_items, function(item) {
   item.addEventListener('click', navClick);
-  if (item.href === location.href.slice(0, -1) ||
-       (item.href == '/welcome' && location.pathname == '/'))
-    addClass(item, 'active');
 });
+
+window.addEventListener("popstate", function(e) {
+  displayPage();
+});
+
+setActiveItem();
