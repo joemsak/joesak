@@ -189,12 +189,9 @@ nav {
   color: #DBDBDB;
   letter-spacing: 0.5em;
 }
-#story-header {
-  h1 {
-    font-size: 1.8rem;
-    line-height: lh(1.5);
-    font-weight: bold;
-    margin-bottom: lh();
-  }
-  p { margin-bottom: lh(); }
+dt {
+}
+dd {
+  font-size: 0.8rem;
+  padding-left: 25px;
 }

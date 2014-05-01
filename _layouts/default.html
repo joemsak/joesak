@@ -1,3 +1,8 @@
+---
+title: clean code and test-driven development | currently visiting Montr&eacute;al
+meta_description: This is the blog of Joe Sak who is a programming craftsman, developing primarily in ruby. He writes and makes music in his spare time, and grew up near Flint, Michigan.
+meta_keywords: ruby, javascript, clean code, tdd, testing, rspec, consultation, writing, music, bikes, development, Michigan, programmer, programming, scss, sass, css3, html5
+---
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,16 +22,35 @@
 
       ga('create', 'UA-36797801-1', 'joesak.com');
       ga('send', 'pageview');
-
     </script>
   </head>
 
   <body id="{{ page.scope }}">
     <section id="main-section">
-      {{ content }}
+      <header id="page-header">
+        <img src="https://en.gravatar.com/userimage/8768527/249b1363c0de2c583f0df7aa03e587bd.jpg?size=200" class="portrait"/>
+        <p>Joe Sak (<a href="http://github.com/joemsak">GitHub</a>, <a href="http://stackoverflow.com/users/727977/hubble">Stack Overflow</a>) is a programming craftsman, customer and user experience advocate, a bike culture enthusiast, an amateur writer, and a world-traveling independent contractor. He is currently visiting Montr&eacute;al.</p>
+      </header>
+
+      <section id="items">
+        <header id="items-header">
+          <nav>
+            <a href="/welcome">Welcome</a>
+            <a href="/how-to-tdd">How to TDD</a>
+            <a href="/testing-workflow">Testing Workflow</a>
+            <a href="/designing-oo-code">OO Code Design</a>
+            <a href="/code-examples">Code Examples</a>
+            <a href="/contact">Contact</a>
+          </nav>
+        </header>
+        {{ content }}
+      </section>
     </section>
     <footer id="main-footer">
-      &copy; <script>document.write(new Date().getFullYear());</script> Joe Sak
+      &copy; <script>document.write(new Date().getFullYear());</script>
+      Joe Sak |
+      No recruiters, please |
+      Joe is followed on Twitter by <a href="http://twitter.com/gewqk">@gewqk</a>
     </footer>
     <script>
       var eachItem = function(items, callback) {
@@ -76,7 +100,6 @@
       }
 
       var navClick = function(e) {
-        e.preventDefault();
         var active_item = document.querySelectorAll('nav a.active')[0];
         removeClass(active_item, 'active');
         addClass(e.target, 'active');
@@ -87,8 +110,6 @@
       eachItem(nav_items, function(item) {
         item.addEventListener('click', navClick);
       });
-
-      filterItems('welcome');
     </script>
   </body>
 </html>
