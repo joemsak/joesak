@@ -43,7 +43,9 @@ meta_keywords: ruby, javascript, clean code, tdd, testing, rspec, consultation, 
             <a href="/contact">Contact</a>
           </nav>
         </header>
-        {{ content }}
+        <section id="content">
+          {{ content }}
+        </section>
       </section>
     </section>
     <footer id="main-footer">
@@ -52,64 +54,6 @@ meta_keywords: ruby, javascript, clean code, tdd, testing, rspec, consultation, 
       No recruiters, please |
       Joe is followed on Twitter by <a href="http://twitter.com/gewqk">@gewqk</a>
     </footer>
-    <script>
-      var eachItem = function(items, callback) {
-        Array.prototype.forEach.call(items, function(item, i){
-          callback(item);
-        });
-      }
-
-      var addClass = function(el, className) {
-        if (el.classList)
-          el.classList.add(className);
-        else
-          el.className += ' ' + className;
-      }
-
-      var removeClass = function(el, className) {
-        if (el !== undefined && el.classList !== undefined) {
-          el.classList.remove(className);
-        } else if (el !== undefined) {
-          el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-        }
-      }
-
-      var getItems = function(className) {
-        var selector = '#items' + ' article';
-        if (className !== undefined)
-          selector += '.' + className
-        return document.querySelectorAll(selector);
-      }
-
-      var showItems = function(items) {
-        eachItem(items, function(item, i){
-          removeClass(item, 'hidden');
-        });
-
-      }
-
-      var hideItems = function(items) {
-        eachItem(items, function(item, i){
-          addClass(item, 'hidden');
-        });
-      }
-
-      var filterItems = function(className) {
-        hideItems(getItems());
-        showItems(getItems(className))
-      }
-
-      var navClick = function(e) {
-        var active_item = document.querySelectorAll('nav a.active')[0];
-        removeClass(active_item, 'active');
-        addClass(e.target, 'active');
-        filterItems(e.target.getAttribute('href'));
-      }
-
-      var nav_items = document.querySelectorAll('nav a');
-      eachItem(nav_items, function(item) {
-        item.addEventListener('click', navClick);
-      });
-    </script>
+    <script src='/js/navigation.js'></script>
   </body>
 </html>
