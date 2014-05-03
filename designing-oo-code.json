@@ -1,0 +1,4 @@
+{
+  "title": "Designing Object-Oriented Code",
+  "body": "<p>the solid principles by uncle bob</p><dl><dt>srp &ndash; the single responsibility principle</dt><dd>a class should have one, and only one, reason to change.</dd><dt>ocp &ndash; the open closed principle</dt><dd>you should be able to extend a classes behavior, without modifying it.</dd><dt>lsp &ndash; the liskov substitution principle</dt><dd>subclasses must be substitutable for their base classes.</dd><dt>isp &ndash; the interface segregation principle</dt><dd>make fine grained interfaces that are client specific.</dd><dt>dip &ndash; the dependency inversion principle</dt><dd>depend on abstractions, not on concretions.</dd></dl>"
+}

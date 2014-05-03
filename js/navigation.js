@@ -24,22 +24,13 @@
     }
   },
 
-  displayContent = function(html) {
-    var container = document.getElementById('content'),
-        parser = new DOMParser(),
-        doc = parser.parseFromString(html, 'text/html'),
-        content = doc.getElementById('content').innerHTML;
-    container.innerHTML = content;
-  },
+  displayContent = function(req) {
+    var titleContainer = document.getElementById('title'),
+        bodyContainer = document.getElementById('body'),
+        data = JSON.parse(req.response);
 
-  displayRemoteContent = function(href) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("get", href, true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4)
-        displayContent(xhr.response);
-    };
-    xhr.send();
+    titleContainer.innerHTML = data.title;
+    bodyContainer.innerHTML = data.body;
   },
 
   unescapeHTML = function(str) {
@@ -54,7 +45,7 @@
   },
 
   displayPage = function(url, title) {
-    displayRemoteContent(url);
+    sendRequest(url + '.json', displayContent);
     setActiveItem(url);
   },
 
