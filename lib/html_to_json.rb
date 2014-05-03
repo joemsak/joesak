@@ -21,7 +21,7 @@ class HtmlToJson
 
   def get_body
     body = get_by_css('#body', :inner_html)
-    body.strip.gsub(/\n\s*/, '')
+    body.gsub(/\n\s*/, '')
   end
 
   def get_by_css(selector, method)
