@@ -8,3 +8,7 @@ gem 'RedCloth'
 gem 'thin'
 gem 'guard-sass',   require: false
 gem 'guard-jekyll', require: false
+
+group :development, :test do
+  gem 'rspec'
+end
