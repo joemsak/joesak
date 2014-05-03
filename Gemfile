@@ -2,6 +2,7 @@
 #ruby-gemset=joesak
 source "https://rubygems.org"
 
+gem 'nokogiri'
 gem 'jekyll'
 gem 'rack-jekyll'
 gem 'RedCloth'
