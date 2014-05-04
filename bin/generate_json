@@ -2,5 +2,7 @@
 
 require './lib/json_generator'
 
+$stdout << "[JSON] Updating files...\n"
 generator = JsonGenerator.new
 generator.generate
+$stdout << "[JSON] Done.\n"
