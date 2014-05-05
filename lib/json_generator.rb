@@ -11,9 +11,10 @@ class JsonGenerator
 
   def generate
     consumer.files.each do |filepath|
-      html   = File.read(filepath).strip
-      json   = convertor_klass.new(html).parse
-      path   = filepath.sub('/index.html', '')
+      html = File.read(filepath).strip
+      json = convertor_klass.new(html).parse
+      path = filepath.sub(/\.html/, '')
+      path = path.sub(/(\w)\/index/, '\1')
 
       writer_klass.new(json, path).write
     end

@@ -26,11 +26,11 @@
 
   displayContent = function(req) {
     var titleContainer = document.getElementById('title'),
-        bodyContainer = document.getElementById('body'),
+        bodyContainer  = document.getElementById('body'),
         data = JSON.parse(req.response);
 
     titleContainer.innerHTML = data.title;
-    bodyContainer.innerHTML = data.body;
+    bodyContainer.innerHTML  = data.body;
   },
 
   unescapeHTML = function(str) {
@@ -45,18 +45,21 @@
   },
 
   displayPage = function(url, title) {
+    if(isAtHome(url)) url += 'index';
     sendRequest(url + '.json', displayContent);
     setActiveItem(url);
   },
 
   formatURL = function(url) {
+    if(url === '/') return url;
     if(url.match(/\/$/) !== null)
       return url.slice(0, -1);
     return url;
   },
 
   isAtHome = function(url) {
-    return url.match(/\/welcome/) && location.pathname == '/';
+    var urlParts = url.split('/');
+    return urlParts[urlParts.length - 1] === ""  && location.pathname == '/';
   },
 
   setActiveItem = function(url) {

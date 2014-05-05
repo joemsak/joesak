@@ -92,6 +92,9 @@ img, p, ul, ol, table, code, form {
   margin-bottom: 1.618rem;
   text-align: center;
   color: #AAA; }
+  #main-footer small {
+    display: block;
+    font-size: 0.6rem; }
 
 nav {
   float: right; }

@@ -35,7 +35,7 @@ meta_keywords: ruby, javascript, clean code, tdd, testing, rspec, consultation, 
       <section id="items">
         <header id="items-header">
           <nav>
-            <a href="/welcome" title="Welcome">Welcome</a>
+            <a href="/" title="Welcome">Welcome</a>
             <a href="/how-to-tdd" title="How to do TDD">How to TDD</a>
             <a href="/testing-workflow" title="Testing Workflow">Testing Workflow</a>
             <a href="/designing-oo-code" title="Object-Oriented Software Design">OO Code Design</a>
@@ -49,10 +49,13 @@ meta_keywords: ruby, javascript, clean code, tdd, testing, rspec, consultation, 
       </section>
     </section>
     <footer id="main-footer">
-      &copy; <script>document.write(new Date().getFullYear());</script>
-      Joe Sak |
+      {{ site.time | date: '%A %B %e' }} |
       No recruiters, please |
-      Joe is followed on Twitter by <a href="http://twitter.com/gewqk">@gewqk</a>
+      This site is <a href="http://github.com/joemsak/joesak">open source</a>
+      <small>
+        Design blatantly ripped off from <a href="http://schneiderik.com">schneiderik.com</a> with permission |
+        Joe is followed on Twitter by <a href="http://twitter.com/gewqk">@gewqk</a>
+      </small>
     </footer>
     <script src="/js/x.browser.xhr.js"></script>
     <script src="/js/native.history.js"></script>

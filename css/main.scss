@@ -94,6 +94,10 @@ img, p, ul, ol, table, code, form {
   margin-bottom: lh();
   text-align: center;
   color: #AAA;
+  small {
+    display: block;
+    font-size: 0.6rem;
+  }
 }
 nav {
   float: right;

@@ -6,6 +6,6 @@ class HtmlConsumer
   end
 
   def files
-    Dir.glob("#{dir}/*/index.html")
+    Dir.glob("#{dir}/*/index.html") << "#{dir}/index.html"
   end
 end
