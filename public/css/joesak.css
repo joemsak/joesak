@@ -7,7 +7,7 @@ body {
   color: #444;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Gentium Book Basic', serif;
   font-weight: bold;
   font-size: 86px;
@@ -22,6 +22,10 @@ h2 {
 
 h3 {
   font-size: 36px;
+}
+
+h4 {
+  font-size: 26px;
   margin-bottom: 0;
 }
 
@@ -52,6 +56,10 @@ a:hover {
   h3 {
     font-size: 20px;
   }
+
+  h4 {
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width: 575px) {
@@ -70,6 +78,10 @@ a:hover {
 
   h3 {
     font-size: 15px;
+  }
+
+  h4 {
+    font-size: 10px;
   }
 }
 
