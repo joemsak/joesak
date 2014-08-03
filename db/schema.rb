@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803211340) do
+ActiveRecord::Schema.define(version: 20140803215017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gists", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "gists", ["profile_id"], name: "index_gists_on_profile_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.string   "username"

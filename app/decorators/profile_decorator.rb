@@ -11,6 +11,6 @@ class ProfileDecorator < Draper::Decorator
 
   private
   def has_page_content?
-    !summary.blank?
+    !summary.blank? || gists.any?
   end
 end
