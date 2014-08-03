@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Guest visits profile page' do
-  scenario 'a blank profile' do
+  scenario 'for a blank profile and sees that there is no information' do
     create(:profile, username: 'joemsak', name: 'Joe Sak')
     page = ProfilePage.new('joemsak')
 
@@ -9,7 +9,7 @@ feature 'Guest visits profile page' do
     expect(page).to have_content('Joe Sak does not have any information.')
   end
 
-  scenario 'a profile with a summary' do
+  scenario 'with a summary and sees the summary' do
     create(:profile, summary: 'Here is my information',
                      username: 'joemsak',
                      name: 'Joe Sak')
@@ -21,7 +21,7 @@ feature 'Guest visits profile page' do
     expect(page).not_to have_content('Joe Sak does not have any information.')
   end
 
-  scenario 'a profile with attached gists' do
+  scenario 'with attached gists and sees the gists' do
     profile = create(:profile, username: 'joemsak')
     page = ProfilePage.new('joemsak')
     profile.gists.create!(attributes_for(:gist))
