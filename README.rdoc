@@ -1,28 +1,24 @@
-== README
+== The Developer's Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple, fast portfolio cms geared toward developers
 
-Things you may want to cover:
+Dependencies:
+* Ruby version 2.1.2
+* Bundler rubygem
+* Development environment: Qt
 
-* Ruby version
+= Setup
 
-* System dependencies
+```
+git clone git@github.com:joemsak/joesak.git
+cd joesak
+git checkout portfolio
+bundle
+rake db:create db:migrate db:test:prepare
+```
 
-* Configuration
+= Run tests
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+rake
+```
