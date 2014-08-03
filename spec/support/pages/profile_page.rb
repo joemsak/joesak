@@ -1,5 +1,6 @@
 class ProfilePage < PageStruct.new(:username)
-  def visit(url = profile_path(username))
+  def visit
+    url = profile_path(username)
     super(url)
   end
 
