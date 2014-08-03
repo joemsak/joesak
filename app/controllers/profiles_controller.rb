@@ -1,5 +1,10 @@
 class ProfilesController < ApplicationController
   def show
-    @profile = Profile.friendly.find(params[:id]).decorate
+    @profile = Profile.decorated(slug)
+  end
+
+  private
+  def slug
+    params[:id]
   end
 end
