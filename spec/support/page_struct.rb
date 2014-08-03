@@ -1,4 +1,4 @@
-class PageBase < Struct
+class PageStruct < Struct
   include Capybara::DSL
   include Rails.application.routes.url_helpers
 

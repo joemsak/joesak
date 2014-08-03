@@ -5,6 +5,8 @@ require 'database_cleaner'
 require 'capybara/rspec'
 require 'factory_girl'
 
+require './spec/support/page_struct'
+
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 Capybara.javascript_driver = :webkit
