@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(version: 20140803215017) do
   enable_extension "plpgsql"
 
   create_table "gists", force: true do |t|
-    t.string   "title"
-    t.text     "content"
     t.integer  "profile_id"
+    t.integer  "remote_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

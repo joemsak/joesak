@@ -24,7 +24,7 @@ feature 'Guest visits profile page' do
   scenario 'a profile with attached gists' do
     profile = create(:profile, username: 'joemsak')
     page = ProfilePage.new('joemsak')
-    profile.gists.create!(attributes_for(:gist, title: 'hello_world.rb'))
+    profile.gists.create!(attributes_for(:gist))
 
     page.visit
     expect(page).to have_gist('hello_world.rb')
