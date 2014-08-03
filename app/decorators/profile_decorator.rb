@@ -1,16 +1,16 @@
 class ProfileDecorator < Draper::Decorator
   delegate_all
 
-  def display_summary
-    if blank_page_fields?
-      "#{name} does not have any information."
+  def information
+    if has_page_content?
+      'content'
     else
-      summary
+      'empty'
     end
   end
 
   private
-  def blank_page_fields?
-    summary.blank?
+  def has_page_content?
+    !summary.blank?
   end
 end
