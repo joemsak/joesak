@@ -7,6 +7,19 @@ Dependencies:
 * Bundler rubygem
 * Development environment: Qt
 
+## Features
+
+* Profile photo and summary
+* Create or attach and display gists
+* Attach resume PDF and/or build a dynamic resume page
+* Attach github repositories
+* Link third party profiles, such as LinkedIn, Stack Overflow, Twitter
+* Link to your blogs and articles
+* (hopefully) Register your own domain name
+* (hopefully) Choose from well designed themes
+* (hopefully) Capture screenshots of web pages
+* (maybe) Host a blog
+
 ## Setup
 
 ```
