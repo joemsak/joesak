@@ -1,4 +1,4 @@
-== The Developer's Portfolio
+## The Developer's Portfolio
 
 A simple, fast portfolio cms geared toward developers
 
@@ -7,7 +7,7 @@ Dependencies:
 * Bundler rubygem
 * Development environment: Qt
 
-= Setup
+## Setup
 
 ```
 git clone git@github.com:joemsak/joesak.git
@@ -17,7 +17,7 @@ bundle
 rake db:create db:migrate db:test:prepare
 ```
 
-= Run tests
+## Run tests
 
 ```
 rake
