@@ -17,24 +17,25 @@ ActiveRecord::Schema.define(version: 20140803215017) do
   enable_extension "plpgsql"
 
   create_table "gists", force: true do |t|
-    t.integer  "profile_id"
+    t.integer  "profile_id", null: false
     t.integer  "remote_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "gists", ["profile_id"], name: "index_gists_on_profile_id", using: :btree
+  add_index "gists", ["remote_id"], name: "index_gists_on_remote_id", unique: true, using: :btree
 
   create_table "profiles", force: true do |t|
-    t.string   "username"
+    t.string   "username",   null: false
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug"
+    t.string   "slug",       null: false
     t.text     "summary"
   end
 
   add_index "profiles", ["slug"], name: "index_profiles_on_slug", unique: true, using: :btree
-  add_index "profiles", ["username"], name: "index_profiles_on_username", using: :btree
+  add_index "profiles", ["username"], name: "index_profiles_on_username", unique: true, using: :btree
 
 end

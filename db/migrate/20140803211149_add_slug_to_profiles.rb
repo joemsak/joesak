@@ -1,6 +1,8 @@
 class AddSlugToProfiles < ActiveRecord::Migration
   def change
-    add_column :profiles, :slug, :string
-    add_index :profiles, :slug, unique: true
+    change_table :profiles do |t|
+      t.string :slug, null: false
+      t.index :slug, unique: true
+    end
   end
 end
