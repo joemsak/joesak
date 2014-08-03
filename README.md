@@ -4,6 +4,7 @@ A simple, fast portfolio cms geared toward developers
 
 Dependencies:
 * Ruby version 2.1.2
+* Rails ~>4.1.4
 * Bundler rubygem
 * Development environment: Qt
 
