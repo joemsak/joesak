@@ -28,7 +28,7 @@ git clone git@github.com:joemsak/joesak.git
 cd joesak
 git checkout portfolio
 bundle
-rake db:create db:migrate db:test:prepare
+rake db:create db:migrate
 ```
 
 ## Run tests
