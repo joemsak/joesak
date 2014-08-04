@@ -14,4 +14,8 @@ class FormPageStruct < PageStruct.new(:noop)
     attribute = attribute_name(name)
     t("activerecord.errors.models.#{model_name.underscore}.attributes.#{attribute}.#{key}")
   end
+
+  def attribute_name(name)
+    name
+  end
 end
