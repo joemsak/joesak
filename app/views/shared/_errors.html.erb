@@ -1,10 +1,10 @@
-<% if (msgs = record.errors.full_messages).any? %>
+<% if (msgs = record.errors).any? %>
   <section class='validation_errors'>
     <h1>
-      <%= t('validations.activerecord.intro', name: record.class.name) %>
+      <%= t('activerecord.errors.introduction', name: record.class.name) %>
     </h1>
     <ul>
-      <% msgs.each do |msg| %>
+      <% msgs.each do |_, msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
