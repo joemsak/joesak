@@ -1,3 +1,3 @@
 FactoryGirl.define do
-  factory :profile
+  factory :profile, aliases: [:developer]
 end
