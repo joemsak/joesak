@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def show
-    @profile = Profile.decorated(slug)
+    @profile = Profile.decorated(slug, with: :gists)
   end
 
   private
