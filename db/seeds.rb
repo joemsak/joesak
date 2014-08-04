@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+if Profile.find_by_username('joemsak')
+  $stdout << "Profile 'joemsak' exists.\n"
+else
+  if profile = Profile.create(username: 'joemsak', name: 'Joe Sak')
+    $stdout << "Profile 'joemsak' created.\n"
+  else
+    $stdout << "Could not create a profile for 'joemsak'"
+    profile.errors.full_messages.each do |msg|
+      $stdout << msg << "\n"
+    end
+  end
+end
