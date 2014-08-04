@@ -1,0 +1,12 @@
+<%= render 'shared/errors', record: @gist %>
+
+<%= form_for @gist do |f| %>
+  <div class='field text' %>
+    <%= f.label :remote_id, "Gist URL or ID" %>
+    <%= f.text_field :remote_id %>
+  </div>
+
+  <div class='button submit'>
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>
