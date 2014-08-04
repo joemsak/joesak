@@ -5,8 +5,8 @@ class Profile < ActiveRecord::Base
   has_many :gists
 
   class << self
-    def decorated(slug)
-      includes(:gists).friendly.find(slug).decorate
+    def decorated(slug, options = {})
+      includes(options[:with]).friendly.find(slug).decorate
     end
   end
 end
