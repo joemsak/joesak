@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140803215017) do
 
   create_table "gists", force: true do |t|
     t.integer  "profile_id", null: false
-    t.integer  "remote_id",  null: false
+    t.string   "remote_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
