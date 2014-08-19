@@ -8,6 +8,7 @@ class GistsController < ApplicationController
   def create
     @gist = current_profile.gists.build(gist_params)
     if @gist.save
+      redirect_to root_developer_path
     else
       render :new
     end
