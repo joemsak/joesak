@@ -1,0 +1,13 @@
+<%= form_tag(developer_sessions_path) do %>
+  <div class='field text'>
+    <%= text_field_tag :username %>
+  </div>
+
+  <div class='field text password'>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class='button submit'>
+    <%= submit_tag t('forms.buttons.sessions.sign_in') %>
+  </div>
+<% end %>

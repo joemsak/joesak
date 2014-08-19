@@ -1,4 +1,9 @@
 en:
+  forms:
+    buttons:
+      submit: 'Save'
+      sessions:
+        sign_in: 'Sign in'
   activerecord:
     errors:
       introduction: "This %{name} could not be saved. Please correct these errors:"

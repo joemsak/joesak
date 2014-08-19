@@ -1,6 +1,6 @@
 class FormPageStruct < PageStruct.new(:noop)
   def submit_form
-    click_button('Save')
+    click_button(button_name)
   end
 
   def has_validation_error?(name, type)
@@ -17,5 +17,9 @@ class FormPageStruct < PageStruct.new(:noop)
 
   def attribute_name(name)
     name
+  end
+
+  def button_name
+    t('forms.buttons.submit')
   end
 end
