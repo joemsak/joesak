@@ -7,6 +7,10 @@ class NewGistPage < FormPageStruct
     fill_in(:gist_remote_id, with: input)
   end
 
+  def success_path
+    profiles_root_path
+  end
+
   private
   def model_name
     'Gist'

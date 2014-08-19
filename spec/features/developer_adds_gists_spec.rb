@@ -19,7 +19,7 @@ feature 'Developer adds gists to profile' do
       page.submit_form
       gist = GistDecorator.new(dev.gists.first)
 
-      expect(current_path).to eq(root_developer_path)
+      expect(current_path).to eq(page.success_path)
       expect(page).to have_content(gist.title)
     end
   end

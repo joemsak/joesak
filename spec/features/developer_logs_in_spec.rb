@@ -9,6 +9,6 @@ feature 'Developer logs in' do
     page.fill_in_form(developer)
     page.submit_form
 
-    expect(current_path).to eq(root_developer_path)
+    expect(current_path).to eq(page.success_path)
   end
 end
