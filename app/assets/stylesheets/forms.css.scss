@@ -1,0 +1,22 @@
+.field {
+  margin: 0 0 15px;
+  label {
+    display: block;
+  }
+  input {
+    &[type=text], &[type=password], &[type=email] {
+      padding: 5px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #444;
+    }
+  }
+}
+
+.new_gist .field {
+  input {
+    &[type=text], &[type=password], &[type=email] {
+      width: 575px;
+    }
+  }
+}
