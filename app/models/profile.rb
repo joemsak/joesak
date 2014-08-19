@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+  include Authentication
   extend FriendlyId
   friendly_id :username, use: :slugged
 

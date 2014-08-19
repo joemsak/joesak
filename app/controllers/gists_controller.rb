@@ -1,4 +1,6 @@
 class GistsController < ApplicationController
+  before_filter :authenticate_profile!
+
   def new
     @gist = current_profile.gists.build
   end
