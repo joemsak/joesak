@@ -1,4 +1,6 @@
 en:
+  profiles:
+    no_information: "%{name} does not have any information."
   page_not_found:
     title: 'Page not found!'
     content: 'Sorry, we could not find that page.'

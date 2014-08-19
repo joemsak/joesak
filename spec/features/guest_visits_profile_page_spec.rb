@@ -6,7 +6,7 @@ feature 'Guest visits profile page' do
     page = ProfilePage.new('joemsak')
 
     page.visit
-    expect(page).to have_content('Joe Sak does not have any information.')
+    expect(page).to have_content(page.no_information)
   end
 
   scenario 'with a summary and sees the summary' do
@@ -18,7 +18,7 @@ feature 'Guest visits profile page' do
     page.visit
     expect(page).to have_content('Joe Sak')
     expect(page).to have_content('Here is my information')
-    expect(page).not_to have_content('Joe Sak does not have any information.')
+    expect(page).not_to have_content(page.no_information)
   end
 
   scenario 'with attached gists and sees the gists' do
