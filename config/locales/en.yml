@@ -1,4 +1,6 @@
 en:
+  application:
+    title: 'Developer Portfolio'
   profiles:
     no_information: "%{name} does not have any information."
   page_not_found:
