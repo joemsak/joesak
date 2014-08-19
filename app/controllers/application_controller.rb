@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   helper_method :current_profile
 
   protect_from_forgery with: :exception
 
-  rescue_from ActiveRecord::RecordNotFound do
+  def not_found
     render 'pages/not_found', status: 404
   end
 

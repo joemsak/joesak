@@ -7,4 +7,11 @@ feature 'Page not found' do
     expect(page).to have_content(page.not_found_title)
     expect(page).to have_content(page.not_found_content)
   end
+
+  scenario 'ActionController::RoutingError is rescued and redirected' do
+    page = PageBase.new
+    page.visit('/foo/bar')
+    expect(page).to have_content(page.not_found_title)
+    expect(page).to have_content(page.not_found_content)
+  end
 end

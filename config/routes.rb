@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     root to: 'profiles#yours'
     resources :sessions, only: [:new, :create]
   end
+
+  get '*unmatched_route', to: 'application#not_found'
 end
