@@ -1,10 +1,20 @@
-class ProfilePage < PageStruct.new(:username)
+class ProfilePage < PageBase
+  attr_reader :username
+
+  def initialize(username)
+    @username = username
+  end
+
   def visit
-    url = profile_path(username)
     super(url)
   end
 
   def has_gist?(title)
     has_css?('#profile .gist', text: title)
+  end
+
+  private
+  def url
+    profile_path(username)
   end
 end

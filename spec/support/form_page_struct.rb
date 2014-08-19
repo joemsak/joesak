@@ -1,4 +1,4 @@
-class FormPageStruct < PageStruct.new(:noop)
+class FormPageStruct < PageBase
   def submit_form
     click_button(button_name)
   end

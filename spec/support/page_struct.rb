@@ -20,3 +20,6 @@ class PageStruct < Struct
     t("activerecord.errors.introduction", name: model_name)
   end
 end
+
+class PageBase < PageStruct.new(:noop)
+end

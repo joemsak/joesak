@@ -1,4 +1,4 @@
-class YourProfilePage < PageStruct.new(:noop)
+class YourProfilePage < PageBase
   def visit
     super(root_developer_path)
   end
