@@ -1,4 +1,7 @@
 en:
+  page_not_found:
+    title: 'Page not found!'
+    content: 'Sorry, we could not find that page.'
   forms:
     buttons:
       submit: 'Save'

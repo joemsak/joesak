@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  rescue_from ActiveRecord::RecordNotFound do
+    render 'pages/not_found', status: 404
+  end
+
   private
   def authenticate_profile!
     redirect_to new_developer_session_path unless current_profile
