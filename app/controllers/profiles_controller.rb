@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_filter :authenticate_profile!, only: :yours
+
   def yours
     @profile = ProfileDecorator.new(current_profile)
     render template: 'profiles/show'
