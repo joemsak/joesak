@@ -11,6 +11,8 @@ gem 'jquery-rails', '~> 3.1.1'
 gem 'turbolinks', '~> 2.2.2'
 gem 'jbuilder', '~> 2.0'
 
+gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
+
 gem 'github_api', '~> 0.12.0'
 gem 'friendly_id', '~> 5.0.4'
 gem 'draper', '~> 1.3.1'
