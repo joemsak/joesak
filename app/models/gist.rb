@@ -11,10 +11,10 @@ class Gist < ActiveRecord::Base
   end
 
   def formatted_remote_id
-    self.remote_id = if capture = remote_id.match(/\/([\w\d]+)\/?$/)
-                       capture[1]
-                     else
-                       remote_id
-                     end
+    if capture = remote_id.match(/\/([\w\d]+)\/?$/)
+      capture[1]
+    else
+      remote_id
+    end
   end
 end
