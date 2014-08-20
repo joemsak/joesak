@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
+      session[:authenticated_id] = @profile.id
       redirect_to root_profile_path
     else
       render :new
