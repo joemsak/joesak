@@ -5,6 +5,9 @@ en:
     no_information: "%{name} does not have any information."
   sessions:
     logged_out: 'You have been logged out.'
+    sign_in:
+      incorrect: 'You did not enter the correct username and password.'
+      correct: 'Welcome back!'
   page_not_found:
     title: 'Page not found!'
     content: 'Sorry, we could not find that page.'
