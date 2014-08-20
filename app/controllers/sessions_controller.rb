@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
   private
   def authenticated
-    @profile ||= Authentication.authenticate(params[:username],
-                                             params[:password])
+    @authenticated ||=
+      Authentication.authenticate(params[:username], params[:password])
   end
 end
