@@ -4,7 +4,7 @@ feature 'Developer adds gists to profile' do
   let(:page) { NewGistPage.new }
 
   scenario 'with no input and sees a validation error' do
-    as_developer do
+    as_profile do
       page.visit
       page.fill_in_remote_finder(nil)
       page.submit_form
@@ -12,8 +12,8 @@ feature 'Developer adds gists to profile' do
     end
   end
 
-  scenario 'with a full url redirects to developer page' do
-    as_developer do |dev|
+  scenario 'with a full url redirects to profile page' do
+    as_profile do |dev|
       page.visit
       page.fill_in_remote_finder('https://gist.github.com/blah/123abc')
       page.submit_form

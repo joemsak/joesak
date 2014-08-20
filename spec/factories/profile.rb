@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :profile, aliases: [:developer] do
+  factory :profile do
     username 'joemsak'
     password 'secret'
     password_confirmation 'secret'

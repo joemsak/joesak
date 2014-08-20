@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-feature 'Developer logs in' do
+feature 'Profile logs in' do
   scenario 'successfully' do
-    developer = create(:developer)
+    profile = create(:profile)
     page = LoginPage.new
 
     page.visit
-    page.fill_in_form(developer)
+    page.fill_in_form(profile)
     page.submit_form
 
     expect(current_path).to eq(page.success_path)
