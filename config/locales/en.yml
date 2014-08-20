@@ -1,6 +1,9 @@
 en:
   application:
     title: 'Developer Portfolio'
+    sign_out: 'Log out'
+    sign_up: 'Sign up'
+    sign_in: 'Log in'
   profiles:
     no_information: "%{name} does not have any information."
   sessions:
