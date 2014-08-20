@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :gists, only: [:new, :create]
   resources :sessions, only: [:new, :create]
+  get 'logout' => 'sessions#destroy', as: :logout
   resources :profiles, only: [:new, :create]
 
   root 'application#welcome'

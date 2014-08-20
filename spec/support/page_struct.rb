@@ -7,6 +7,10 @@ class PageStruct < Struct
     save_and_open_page
   end
 
+  def logged_out_text
+    t('sessions.logged_out')
+  end
+
   def not_found_title
     t('page_not_found.title')
   end

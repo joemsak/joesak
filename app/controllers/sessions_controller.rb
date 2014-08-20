@@ -7,4 +7,10 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    session[:profile_id] = nil
+    flash[:notice] = t('sessions.logged_out')
+    redirect_to root_path
+  end
 end
