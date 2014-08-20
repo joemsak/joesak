@@ -20,4 +20,12 @@ en:
         gist:
           attributes:
             remote_id:
-              blank: "You must enter a Gist URL or ID."
+              blank: 'We need a Gist URL or ID.'
+        profile:
+          attributes:
+            username:
+              blank: 'We need a username.'
+            password:
+              blank: 'We need a password.'
+            password_confirmation:
+              confirmation: 'The password and its confirmation gotta match.'

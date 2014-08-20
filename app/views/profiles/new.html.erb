@@ -1,3 +1,5 @@
+<%= render 'shared/errors', record: @profile %>
+
 <%= form_for(@profile) do |f| %>
   <div class='field text'>
     <%= f.label :username %>
