@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   resources :profiles, only: [:new, :create]
 
+  root 'application#welcome'
+
   get '*unmatched_route', to: 'application#not_found'
 end

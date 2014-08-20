@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     render 'pages/not_found', status: 404
   end
 
+  def welcome
+    render 'pages/welcome'
+  end
+
   private
   def authenticate_profile!
     redirect_to new_session_path unless current_profile
