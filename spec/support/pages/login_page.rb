@@ -1,6 +1,6 @@
 class LoginPage < FormPageStruct
   def visit
-    super(new_session_path)
+    super(sign_in_path)
   end
 
   def fill_in_form(profile)

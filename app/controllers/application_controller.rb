@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate_profile!
-    redirect_to new_session_path unless current_profile
+    redirect_to sign_in_path unless current_profile
   end
 
   def current_profile
