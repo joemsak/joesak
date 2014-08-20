@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     if authenticated
-      session[:profile_id] = authenticated.id
+      session[:authenticated_id] = authenticated.id
       flash[:notice] = t('sessions.sign_in.correct')
       redirect_to root_profile_path
     else
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:profile_id] = nil
+    session[:authenticated_id] = nil
     flash[:notice] = t('sessions.logged_out')
     redirect_to root_path
   end

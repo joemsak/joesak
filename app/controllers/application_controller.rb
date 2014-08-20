@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_profile
-    @profile ||= Profile.find(session[:profile_id]) if session[:profile_id]
+    if session[:authenticated_id]
+      @current_profile ||= Profile.find(session[:authenticated_id])
+    end
   end
 end
