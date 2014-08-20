@@ -6,6 +6,19 @@ class ProfilesController < ApplicationController
     render template: 'profiles/show'
   end
 
+  def new
+    @profile = Profile.new
+  end
+
+  def create
+    @profile = Profile.new(profile_params)
+    if @profile.save
+      redirect_to profiles_root_path
+    else
+      render :new
+    end
+  end
+
   def show
     @profile = Profile.decorated(slug, with: :gists)
   end
@@ -13,5 +26,9 @@ class ProfilesController < ApplicationController
   private
   def slug
     params[:id]
+  end
+
+  def profile_params
+    params[:profile].permit(:username, :password, :password_confirmation)
   end
 end

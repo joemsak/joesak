@@ -11,6 +11,8 @@ en:
       submit: 'Save'
       sessions:
         sign_in: 'Sign in'
+      profiles:
+        sign_up: 'Sign up'
   activerecord:
     errors:
       introduction: "This %{name} could not be saved. Please correct these errors:"
