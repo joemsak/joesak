@@ -1,22 +1,22 @@
 <%= render 'shared/errors', record: @profile %>
 
 <%= form_for(@profile) do |f| %>
-  <div class='field text'>
+  <div class='row'>
     <%= f.label :username %>
     <%= f.text_field :username %>
   </div>
 
-  <div class='field text password'>
+  <div class='row'>
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
 
-  <div class='field text password'>
+  <div class='row'>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <div class='button submit'>
-    <%= f.submit t('forms.buttons.profiles.sign_up') %>
+  <div class='row'>
+    <%= f.submit t('forms.buttons.profiles.sign_up'), class: 'button' %>
   </div>
 <% end %>

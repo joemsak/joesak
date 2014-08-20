@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
 
+gem 'foundation-rails', '~> 5.3.3.0'
+
 gem 'github_api', '~> 0.12.0'
 gem 'friendly_id', '~> 5.0.4'
 gem 'draper', '~> 1.3.1'
