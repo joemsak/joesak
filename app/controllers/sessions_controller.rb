@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def create
-    if Authentication.authenticate(params, session)
+    if authenticated
+      session[:profile_id] = authenticated.id
       flash[:notice] = t('sessions.sign_in.correct')
       redirect_to root_profile_path
     else
@@ -13,5 +14,11 @@ class SessionsController < ApplicationController
     session[:profile_id] = nil
     flash[:notice] = t('sessions.logged_out')
     redirect_to root_path
+  end
+
+  private
+  def authenticated
+    @profile ||= Authentication.authenticate(params[:username],
+                                             params[:password])
   end
 end

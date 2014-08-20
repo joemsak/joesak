@@ -7,17 +7,16 @@ module Authentication
     base.validates :password, confirmation: true, presence: { on: :create }
   end
 
-  def self.authenticate(params, session)
-    profile = Profile.find_by(username: params[:username])
-    if profile && password_correct?(profile, params[:password])
-      session[:profile_id] = profile.id
-      true
-    else
-      false
-    end
+  def self.authenticate(username, password)
+    profile = find_profile(username)
+    return profile if profile && password_correct?(profile, password)
   end
 
   private
+  def self.find_profile(username)
+    Profile.find_by(username: username)
+  end
+
   def self.password_correct?(profile, password)
     profile.password_hash ==
       BCrypt::Engine.hash_secret(password, profile.password_salt)
