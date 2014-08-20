@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Developer adds gists to profile' do
+feature 'Profile adds gists to profile' do
   let(:page) { NewGistPage.new }
 
   scenario 'with no input and sees a validation error' do

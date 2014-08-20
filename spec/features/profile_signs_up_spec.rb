@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Developer signs up' do
+feature 'Profile signs up' do
   scenario 'successfully' do
     page = NewProfilePage.new
     page.visit
