@@ -1,5 +1,5 @@
 class YourProfilePage < PageBase
   def visit
-    super(profiles_root_path)
+    super(root_profile_path)
   end
 end

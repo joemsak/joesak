@@ -8,7 +8,7 @@ class NewGistPage < FormPageStruct
   end
 
   def success_path
-    profiles_root_path
+    root_profile_path
   end
 
   private
